@@ -1,0 +1,9 @@
+//style the CircularCountdown component
+//the component is a div with a class of "circular-countdown"
+
+.circular-countdown {
+  @apply mt-4 mb-4;
+  @apply flex flex-col items-center;
+  //make the background circular
+  @apply rounded-full bg-white;
+}

@@ -30,11 +30,8 @@ export default function Countdown(
 
   const [timeLeftPercentage, setTimeLeftPercentage] = React.useState<number>(calculateTimeLeftPercentage());
 
-  console.log('date', +date)
   const calculateTimeLeft = (): TimeLeft => {
     const difference = +final_date - +new Date()
-    console.log(difference)
-    console.log(+new Date(Date.now()))
     let timeLeft = {
       days: 0,
       hours: 0,
@@ -66,21 +63,19 @@ export default function Countdown(
   });
 
   return (
-    <div>
-      <CircularProgress className={styles['circular-countdown']} variant="determinate" value={timeLeftPercentage} />
+    <>
+      <CircularProgress
+        className={styles['circular-countdown']}
+        variant="determinate"
+        value={timeLeftPercentage}
+        size={100}
+        thickness={6}
+        sx={{ color: '#38A198' }}
+      />
       <div>
         <text>{timeLeft.days}</text>
-        <text>Days</text>
-
-        <text>{timeLeft.hours}</text>
-        <text>Hours</text>
-
-        <text>{timeLeft.minutes}</text>
-        <text>Minutes</text>
-
-        <text>{timeLeft.seconds}</text>
-        <text>Seconds</text>
+        <text> Days</text>
       </div>
-    </div>
+    </>
   );
 }

@@ -1,0 +1,38 @@
+.topnav {
+  //items should all be in the center of the screen but 12 pixels apart from eachother
+  //all fonts should be lowercase
+  @apply flex items-center justify-center;
+  @apply flex items-center flex-col;
+  @apply bg-white;
+  @apply h-16 my-12;
+  @apply w-full;
+
+  .header {
+    @apply space-x-8 m-4;
+    @apply font-bold;
+    @apply text-gray-800;
+    &--title {
+      //space between letters should be 0.1em
+      @apply tracking-widest;
+      @apply text-3xl;
+      @apply font-serif;
+    }
+    &--subtitle {
+      @apply text-xl;
+      @apply font-serif italic font-light;
+    }
+  }
+
+  .links {
+    @apply flex items-center justify-center;
+    &--button {
+      text-transform: lowercase;
+      @apply text-gray-800;
+      @apply hover:text-gray-600;
+      @apply font-semibold font-serif;
+      @apply z-10 h-11;
+      @apply w-32 text-lg;
+    }
+    // @apply font-cormorant;
+  }
+}

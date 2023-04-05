@@ -10,8 +10,10 @@ export default function Gallery() {
       <div className={styles['topnav']}>
         <Topnav />
       </div>
+      {/* TODO firebase cloud storage */}
       <div className={styles['content']}>
         Gallery
+
       </div>
     </div>
   )

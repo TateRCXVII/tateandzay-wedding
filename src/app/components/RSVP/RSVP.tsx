@@ -12,9 +12,6 @@ export default function RSVP() {
         <Topnav />
       </div>
       <div className={styles['content']}>
-        RSVP
-      </div>
-      <div>
         <RSVPForm userId='1234' />
       </div>
     </div>

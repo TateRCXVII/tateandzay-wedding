@@ -1,19 +1,7 @@
-.form {
-  @apply flex flex-col;
+.rsvp-form {
+  @apply flex flex-col items-center justify-center;
 
-  .form--input {
-    @apply font-serif;
-    @apply text-2xl;
-    @apply text-gray-800;
-    @apply border-2;
-    @apply border-gray-800;
-    @apply rounded;
-    @apply p-2;
-    @apply m-2;
-    @apply w-96;
-    @apply focus:outline-none;
-    @apply focus:ring-2;
-    @apply focus:ring-gray-800;
-    @apply focus:border-transparent;
+  &--input {
+    @apply py-2;
   }
 }

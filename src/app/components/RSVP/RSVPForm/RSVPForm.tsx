@@ -36,62 +36,65 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ userId }) => {
   // the only input needed is the number of people in the party, the last name of the party, and whether or not they are attending
   // use tailwindcss to style the form
   return (
-    <div className={styles['rsvp-form']}>
-      <div className="flex items-center justify-center font-serif">
-        <Card className="rounded-lg flex flex-row grid-rows-2 p-6 space-y-6 overflow-hidden bg-white shadow-xl">
-          <h1 className="text-3xl font-bold text-gray-800">RSVP</h1>
-          <form onSubmit={handleSubmit}>
-            <div className="flex flex-col">
-              <label htmlFor="dinnerPartyNumber" className="block text-sm font-medium text-gray-700">
-                Number of People in Your Party
-              </label>
+    <Card className={styles.rsvpFormCard}>
+      <div className={styles.rsvpFormContainer}>
+        <div className={styles.rsvpFormDescription}>
+          <h2 className={styles['rsvpTitle']}>RSVP for our Event</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+            eget mauris vitae purus efficitur tristique non eu nibh. Curabitur
+            imperdiet libero sit amet justo euismod, vel pellentesque lacus
+            pharetra.
+          </p>
+        </div>
+        <div className={styles.rsvpFormInputs}>
+          <Card>
+            <form onSubmit={handleSubmit}>
+              <span>Party Number</span>
               <Input
-                className={styles['rsvp-form--input']}
                 css={{}}
                 type="text"
-                id="dinnerPartyNumber"
-                placeholder="Number of People in Your Party"
                 value={dinnerPartyNumber}
                 onChange={(e) => setDinnerPartyNumber(e.target.value)}
+                className={styles['rsvpFormInput']}
               />
-            </div>
-            <div className="flex flex-col space-y-2">
-              <label htmlFor="dinnerLastName" className="block text-sm font-medium text-gray-700">
-                Last Name of Party
-              </label>
+              <span>Last Name</span>
               <Input
-                className='w-full'
                 css={{}}
                 type="text"
-                id="dinnerLastName"
-                placeholder="Last Name of Party"
                 value={dinnerLastName}
                 onChange={(e) => setDinnerLastName(e.target.value)}
+                className={styles['rsvpFormInput']}
               />
-            </div>
-            <div className="flex flex-col space-y-2">
-              <label htmlFor="dinnerIsAttending" className="block text-sm font-medium text-gray-700">
-                Are You Attending?
+              <label>
+                <input
+                  type="checkbox"
+                  checked={dinnerIsAttending}
+                  onChange={() => setDinnerIsAttending(!dinnerIsAttending)}
+                />
+                <span className="ml-2">Will you be attending?</span>
               </label>
-              <Input
-                css={{}}
-                type="checkbox"
-                id="dinnerIsAttending"
-                placeholder="Are You Attending?"
-                checked={dinnerIsAttending}
-                onChange={(e) => setDinnerIsAttending(e.target.checked)}
-              />
-            </div>
-            <div className="flex justify-end">
-              <Button className="mt-4" type="submit">
+              <Button
+                sx={{
+                  backgroundColor: '#000000',
+                  color: '#FFFFFF',
+                  '&:hover': {
+                    backgroundColor: '#767676',
+                  },
+                  //on hover, change color to #767676
+                }}
+                type="submit"
+                variant="contained"
+                className={styles['button']}>
                 Submit
               </Button>
-            </div>
-          </form>
-        </Card>
+            </form>
+          </Card>
+        </div>
       </div>
-    </div >
+    </Card>
   );
+
 };
 
 export default RSVPForm;

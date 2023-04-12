@@ -1,12 +1,12 @@
 import React from 'react'
-import Gallery from '../components/Gallery/Gallery'
+import GalleryPage from '../components/Gallery/GalleryPage'
 
 
 export default function Gallery_Page() {
   return (
     //return a component with the countdown and aisle on a white background
     <>
-      <Gallery />
+      <GalleryPage />
     </>
   )
 }

@@ -11,6 +11,11 @@ module.exports = {
         //add CormorantGaramond fonts (light, lightitalic, regular, italic)
         serif: ["Cormorant Garamond", "serif"],
       },
+      spacing: {
+        "11/12": "91.6666%",
+        430: "430px",
+        740: "740px",
+      },
     },
   },
   plugins: [],

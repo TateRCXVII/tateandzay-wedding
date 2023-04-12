@@ -1,10 +1,9 @@
 import React from 'react'
-import Aisle from '../Aisle/Aisle/Aisle'
-import Countdown from '../Countdown/Countdown'
 import Topnav from '../Topnav/Topnav'
 import styles from './styles.module.scss'
+import Gallery from './GalleryCmpnt/Gallery'
 
-export default function Gallery() {
+export default function GalleryPage() {
   return (
     <div className={styles['homepage']}>
       <div className={styles['topnav']}>
@@ -12,8 +11,7 @@ export default function Gallery() {
       </div>
       {/* TODO firebase cloud storage */}
       <div className={styles['content']}>
-        Gallery
-
+        <Gallery />
       </div>
     </div>
   )

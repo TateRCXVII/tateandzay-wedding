@@ -10,20 +10,20 @@ import { getStorage } from "firebase/storage";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   //.env
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
+  apiKey: "AIzaSyCxz9nU4eWZ1VK0L6-I7D0AQ9CMu-0PDJ8",
+  authDomain: "wedding-rsvp-zate.firebaseapp.com",
+  projectId: "wedding-rsvp-zate",
+  storageBucket: "wedding-rsvp-zate.appspot.com",
+  databaseURL: "https://wedding-rsvp-zate-default-rtdb.firebaseio.com",
+  messagingSenderId: "554105169785",
+  appId: "1:554105169785:web:4a1b4f51f60cd317a6b1a8",
+  measurementId: "G-14VL06ZLNN"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const storage = getStorage(app);
+export const storage = getStorage(app);
 export const database = getDatabase(app);
 
 export const writeUserData = (userId: string, name: any, email: any, imageUrl: any) => {

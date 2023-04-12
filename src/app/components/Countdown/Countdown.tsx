@@ -73,8 +73,8 @@ export default function Countdown(
         sx={{ color: '#38A198' }}
       />
       <div>
-        <text>{timeLeft.days}</text>
-        <text> Days</text>
+        <span className='font-serif'>{timeLeft.days}</span>
+        <span className='font-serif'> Days</span>
       </div>
     </>
   );

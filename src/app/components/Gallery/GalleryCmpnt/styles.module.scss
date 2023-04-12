@@ -1,0 +1,24 @@
+.gallery {
+  @apply fixed top-0 left-4 md:left-14 lg:left-56 right-4 md:right-14 lg:right-56 bottom-0 flex justify-center items-center pt-24 min-w-fit;
+}
+
+.left-arrow,
+.right-arrow {
+  @apply absolute z-10 p-2 md:p-4 focus:outline-none text-xl md:text-4xl;
+}
+
+.left-arrow {
+  @apply -left-7 md:left-12;
+}
+
+.right-arrow {
+  @apply -right-8 md:right-12;
+}
+
+.carousel-container {
+  @apply py-4 relative w-11/12 md:w-430 h-11/12 md:h-740 px-2;
+}
+
+.icon-container {
+  @apply w-8 h-8 flex justify-center items-center;
+}

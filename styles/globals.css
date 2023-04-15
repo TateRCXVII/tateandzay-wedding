@@ -2,3 +2,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* styles/global.css */
+
+/* Add your global styles here */
+.custom-carousel .react-images__view-image {
+  object-fit: contain;
+}
+
+.custom-carousel .react-images__modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

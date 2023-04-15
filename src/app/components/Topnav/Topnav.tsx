@@ -31,12 +31,12 @@ export default function Topnav() {
     <div className={styles.topnav}>
       <div className={`${styles.header} ${styles['header--desktop']}`}>
         {/* Desktop header */}
-        <text className={styles['header--title']}>TATE REYNOLDS</text>
-        <text className={styles['header--subtitle']}>and</text>
-        <text className={styles['header--title']}>ZAYLIE COLLINS</text>
+        <span className={styles['header--title']}>TATE REYNOLDS</span>
+        <span className={styles['header--subtitle']}>and</span>
+        <span className={styles['header--title']}>ZAYLIE COLLINS</span>
       </div>
       <div className={`${styles.header} ${styles['header--mobile']}`}>
-        <text className={styles['header--title']}>T & Z</text>
+        <span className={styles['header--title']}>T & Z</span>
         <button
           className={styles['menu-toggle']}
           onClick={() => setMobileNavOpen(!mobileNavOpen)}

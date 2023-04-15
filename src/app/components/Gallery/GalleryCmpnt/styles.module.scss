@@ -1,24 +1,41 @@
-.gallery {
-  @apply fixed top-0 left-4 md:left-14 lg:left-56 right-4 md:right-14 lg:right-56 bottom-0 flex justify-center items-center pt-24 min-w-fit;
+.page {
+  @apply relative;
 }
 
-.left-arrow,
-.right-arrow {
-  @apply absolute z-10 p-2 md:p-4 focus:outline-none text-xl md:text-4xl;
+.closeButton {
+  @apply absolute top-5 right-5 text-2xl text-white;
 }
 
-.left-arrow {
-  @apply -left-7 md:left-12;
+.lightboxWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  @apply items-center place-content-center;
 }
 
-.right-arrow {
-  @apply -right-8 md:right-12;
+.lightboxBackground {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @apply flex items-center place-content-center justify-center;
 }
 
-.carousel-container {
-  @apply py-4 relative w-11/12 md:w-430 h-11/12 md:h-740 px-2;
-}
-
-.icon-container {
-  @apply w-8 h-8 flex justify-center items-center;
+.carouselImage {
+  max-width: 100%;
+  max-height: 80vh; // Change this value to control the height of the image
+  object-fit: contain;
+  margin: auto auto;
+  @apply mx-auto;
 }

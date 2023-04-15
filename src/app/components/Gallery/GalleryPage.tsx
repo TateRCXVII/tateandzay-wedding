@@ -1,7 +1,9 @@
 import React from 'react'
 import Topnav from '../Topnav/Topnav'
 import styles from './styles.module.scss'
-import Gallery from './GalleryCmpnt/Gallery'
+import Carousel from './GalleryCmpnt/Gallery'
+// import the gallery component from react-photo-gallery
+import Gallery from 'react-photo-gallery'
 
 export default function GalleryPage() {
   return (
@@ -11,7 +13,7 @@ export default function GalleryPage() {
       </div>
       {/* TODO firebase cloud storage */}
       <div className={styles['content']}>
-        <Gallery />
+        <Carousel />
       </div>
     </div>
   )

@@ -4,6 +4,7 @@ import Button from '@mui/material/Button'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import styles from './styles.module.scss'
+import { useRouter } from 'next/router'
 
 //create a top nav
 export default function Topnav() {
@@ -47,7 +48,7 @@ export default function Topnav() {
       <div className={`${styles.links} ${styles['links--desktop']}`}>
         {/* Desktop links */}
         <Button className={styles['links--button']} onClick={() => { window.location.href = '/' }}>home</Button>
-        <Button className={styles['links--button']} onClick={() => { window.location.href = '/rsvp' }}>rsvp</Button>
+        {/* <Button className={styles['links--button']} onClick={() => { window.location.href = '/rsvp' }}>rsvp</Button> */}
         <Button className={styles['links--button']} onClick={() => { window.location.href = '/registry' }}>registry</Button>
         <Button className={styles['links--button']} onClick={() => { window.location.href = '/gallery' }}>gallery</Button>
       </div>
@@ -61,7 +62,7 @@ export default function Topnav() {
           </button>
           {/* Mobile links */}
           <Button className={styles['links--button']} onClick={() => handleMobileLinkClick('/')}>home</Button>
-          <Button className={styles['links--button']} onClick={() => handleMobileLinkClick('/rsvp')}>rsvp</Button>
+          {/* <Button className={styles['links--button']} onClick={() => handleMobileLinkClick('/rsvp')}>rsvp</Button> */}
           <Button className={styles['links--button']} onClick={() => handleMobileLinkClick('/registry')}>registry</Button>
           <Button className={styles['links--button']} onClick={() => handleMobileLinkClick('/gallery')}>gallery</Button>
         </div>

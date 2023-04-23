@@ -50,22 +50,6 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ userId }) => {
         <div className={styles.rsvpFormInputs}>
           <Card>
             <form onSubmit={handleSubmit}>
-              <span>Party Number</span>
-              <Input
-                css={{}}
-                type="text"
-                value={dinnerPartyNumber}
-                onChange={(e) => setDinnerPartyNumber(e.target.value)}
-                className={styles['rsvpFormInput']}
-              />
-              <span>Last Name</span>
-              <Input
-                css={{}}
-                type="text"
-                value={dinnerLastName}
-                onChange={(e) => setDinnerLastName(e.target.value)}
-                className={styles['rsvpFormInput']}
-              />
               <label>
                 <input
                   type="checkbox"
@@ -74,6 +58,22 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ userId }) => {
                 />
                 <span className="ml-2">Will you be attending?</span>
               </label>
+              <span>Last Name</span>
+              <Input
+                css={{}}
+                type="text"
+                value={dinnerLastName}
+                onChange={(e) => setDinnerLastName(e.target.value)}
+                className={styles['rsvpFormInput']}
+              />
+              <span>Number in Party</span>
+              <Input
+                css={{}}
+                type="text"
+                value={dinnerPartyNumber}
+                onChange={(e) => setDinnerPartyNumber(e.target.value)}
+                className={styles['rsvpFormInput']}
+              />
               <Button
                 sx={{
                   backgroundColor: '#000000',

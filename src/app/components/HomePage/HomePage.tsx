@@ -1,9 +1,9 @@
 import React from 'react'
-import Aisle from '../Aisle/Aisle/Aisle'
 import Countdown from '../Countdown/Countdown'
 import Topnav from '../Topnav/Topnav'
 import styles from './styles.module.scss'
 import PhotosComponent from './Photos/Photos'
+import LoveStory from '../LoveStory/LoveStory'
 
 export default function HomePage() {
   return (
@@ -15,6 +15,7 @@ export default function HomePage() {
         <PhotosComponent />
       </div>
       <div className={styles['content']}>
+        <LoveStory />
         <Countdown date={'2023-06-09'} />
       </div>
     </div>

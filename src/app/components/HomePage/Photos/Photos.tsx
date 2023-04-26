@@ -7,6 +7,7 @@ import { storage } from '../../../../firebase/index';
 import { ref, listAll, getDownloadURL } from 'firebase/storage';
 import styles from './styles.module.scss';
 import Image from 'next/image';
+import ScrollTrigger from 'react-scroll-trigger';
 
 const fetchImageUrls = async () => {
   const storageRef = ref(storage, 'photos');
@@ -47,7 +48,6 @@ const getImageDimensions = (
 }
 
 const PhotosComponent: React.FC = () => {
-  // return 3 photos in one row from the fetchImageUrls function
   const [imageUrls, setImageUrls] = useState<any[]>([]);
 
   useEffect(() => {
@@ -56,20 +56,41 @@ const PhotosComponent: React.FC = () => {
     });
   }, []);
 
+  const onEnterViewport = (index: number) => {
+    const photoElement = document.getElementById(`photo-${index}`);
+    if (photoElement) {
+      photoElement.classList.add(styles['fade-in']);
+    }
+  };
+
+  const onExitViewport = (index: number) => {
+    const photoElement = document.getElementById(`photo-${index}`);
+    if (photoElement) {
+      photoElement.classList.remove(styles['fade-in']);
+    }
+  };
+
   return (
     <div className={styles['photos']}>
       {imageUrls.map((image, index) => (
-        <div className={styles['photo']} key={index}>
-          <Image
-            src={image.src}
-            alt="Photo"
-            width={image.width}
-            height={image.height}
-          />
-        </div>
+        <ScrollTrigger
+          key={index}
+          onEnter={() => onEnterViewport(index)}
+          onExit={() => onExitViewport(index)}
+        >
+          <div className={styles['photo']} id={`photo-${index}`}>
+            <Image
+              src={image.src}
+              alt="Photo"
+              width={image.width / 4}
+              height={image.height / 4}
+              style={{ objectFit: 'cover', objectPosition: '0 0 0 0' }}
+            />
+          </div>
+        </ScrollTrigger>
       ))}
     </div>
-  )
-}
+  );
+};
 
 export default PhotosComponent;

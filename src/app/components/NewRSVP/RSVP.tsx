@@ -77,7 +77,7 @@ export default function RSVP() {
             exit={{ opacity: 0 }}
             className={styles.rsvpFormCard}
           >
-            <h1 className="text-black text-4xl font-serif">RSVP For The Dinner</h1>
+            <h1 className="text-black text-3xl font-serif">RSVP For The Dinner</h1>
             <form onSubmit={handleSubmitName}>
               <label htmlFor="name" className="block text-lg font-semibold">
                 Please enter your first and last name
@@ -107,7 +107,7 @@ export default function RSVP() {
             exit={{ opacity: 0 }}
             className={styles.rsvpFormCard}
           >
-            <h1 className="text-black text-4xl font-serif">
+            <h1 className="text-black text-3xl font-serif">
               Will you be attending the dinner on June 8th?
             </h1>
             <form onSubmit={handleSubmitAttendance}>
@@ -147,7 +147,7 @@ export default function RSVP() {
             exit={{ opacity: 0 }}
             className={styles.rsvpFormCard}
           >
-            <h1 className="text-black text-4xl font-serif">How many people are in your party?</h1>
+            <h1 className="text-black text-3xl font-serif">How many people are in your party?</h1>
             <form onSubmit={handleSubmitPartySize}>
               <input
                 type="number"
@@ -173,8 +173,8 @@ export default function RSVP() {
             exit={{ opacity: 0 }}
             className={styles.rsvpFormCard}
           >
-            <h1 className="text-black text-4xl font-serif">Thanks! Your response has been recorded.</h1>
-            <h2 className="text-black text-2xl font-serif">Buy the couple a gift:</h2>
+            <h1 className="text-black text-3xl font-serif pb-3">Thanks! Your response has been recorded.</h1>
+            <h2 className="text-black text-2xl font-serif pb-3">Buy the couple a gift:</h2>
             <div className="flex my-3">
               <a
                 href="https://www.zola.com/"

@@ -63,19 +63,24 @@ export default function Countdown(
   });
 
   return (
-    <>
-      <CircularProgress
-        className={styles['circular-countdown']}
-        variant="determinate"
-        value={timeLeftPercentage}
-        size={100}
-        thickness={6}
-        sx={{ color: '#38A198' }}
-      />
-      <div>
-        <span className='font-serif'>{timeLeft.days}</span>
-        <span className='font-serif'> Days</span>
+    <div className="w-full sm:w-3/4 md:w-4/5 lg:w-2/3 xl:w-4/7 mx-auto bg-white shadow-lg rounded-lg p-8 justify-center">
+      <div className="text-center">
+        <h2 className="font-serif text-2xl mb-4">Countdown</h2>
       </div>
-    </>
+      <div className="flex flex-col items-center">
+        <CircularProgress
+          //className={styles['circular-countdown']}
+          variant="determinate"
+          value={timeLeftPercentage}
+          size={220}
+          thickness={6}
+          sx={{ color: '#38A198' }}
+        />
+        <div>
+          <span className="font-serif text-3xl">{timeLeft.days}</span>
+          <span className="font-serif text-3xl"> Days</span>
+        </div>
+      </div>
+    </div>
   );
 }

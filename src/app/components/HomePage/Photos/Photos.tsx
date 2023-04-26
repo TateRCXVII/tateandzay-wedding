@@ -1,18 +1,15 @@
-// I want three photos to be in one row (or 3 columns)
-// render these photos from firebase storage like in the Gallery.tsx component
-// components/Gallery.tsx
 'use client';
 import React, { useEffect, useState, useCallback } from 'react';
 import { storage } from '../../../../firebase/index';
 import { ref, listAll, getDownloadURL } from 'firebase/storage';
 import styles from './styles.module.scss';
 import Image from 'next/image';
-import ScrollTrigger from 'react-scroll-trigger';
+import VisibilitySensor from 'react-visibility-sensor';
 
 const fetchImageUrls = async () => {
   const storageRef = ref(storage, 'photos');
   const imageUrls: any[] = [];
-  const maxImages = 3; // Set the maximum number of images to return
+  const maxImages = 2; // Set the maximum number of images to return
 
   const items = await listAll(storageRef);
 
@@ -70,24 +67,33 @@ const PhotosComponent: React.FC = () => {
     }
   };
 
+  const onVisibilityChange = (index: number, isVisible: boolean) => {
+    const photoElement = document.getElementById(`photo-${index}`);
+    if (photoElement) {
+      if (isVisible) {
+        photoElement.classList.add(styles['fade-in']);
+      } else {
+        photoElement.classList.remove(styles['fade-in']);
+      }
+    }
+  };
+
   return (
     <div className={styles['photos']}>
       {imageUrls.map((image, index) => (
-        <ScrollTrigger
+        <VisibilitySensor
           key={index}
-          onEnter={() => onEnterViewport(index)}
-          onExit={() => onExitViewport(index)}
+          onChange={(isVisible: boolean) => onVisibilityChange(index, isVisible)}
+          partialVisibility
         >
-          <div className={styles['photo']} id={`photo-${index}`}>
-            <Image
-              src={image.src}
-              alt="Photo"
-              width={image.width / 4}
-              height={image.height / 4}
-              style={{ objectFit: 'cover', objectPosition: '0 0 0 0' }}
-            />
-          </div>
-        </ScrollTrigger>
+          <Image
+            src={image.src}
+            alt="Photo"
+            width={image.width / 8}
+            height={image.height / 8}
+            className={styles['photo']} id={`photo-${index}`}
+          />
+        </VisibilitySensor>
       ))}
     </div>
   );

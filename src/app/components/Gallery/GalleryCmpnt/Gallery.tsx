@@ -7,6 +7,7 @@ import Gallery from 'react-photo-gallery';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import styles from './styles.module.scss';
+import Image from 'next/image';
 
 const fetchImageUrls = async () => {
   const storageRef = ref(storage, 'photos');
@@ -30,8 +31,7 @@ const getImageDimensions = (
   src: string
 ): Promise<{ width: number; height: number }> => {
   return new Promise((resolve) => {
-    //creat img without using window
-    const img = new Image();
+    const img = new window.Image();
     img.src = src;
     img.onload = () => {
       resolve({
@@ -93,7 +93,7 @@ const CarouselComponent: React.FC = () => {
                   >
                     {imageUrls.map((image, index) => (
                       <div key={index}>
-                        <img className={styles.carouselImage} src={image.src} alt={image.title} />
+                        <Image className={styles.carouselImage} src={image.src} alt={image.title} width={image.width * 3} height={image.height * 3} />
                       </div>
                     ))}
                   </Carousel>

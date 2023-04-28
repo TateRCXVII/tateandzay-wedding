@@ -1,6 +1,4 @@
 import React from 'react'
-import Aisle from '../Aisle/Aisle/Aisle'
-import Countdown from '../Countdown/Countdown'
 import Topnav from '../Topnav/Topnav'
 import styles from './styles.module.scss'
 import RegistryCard from './RegistryCard/RegistryCard'

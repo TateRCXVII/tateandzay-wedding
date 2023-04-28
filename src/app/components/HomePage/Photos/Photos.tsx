@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { storage } from '../../../../firebase/index';
 import { ref, listAll, getDownloadURL } from 'firebase/storage';
 import styles from './styles.module.scss';
+import Image from 'next/image';
 import VisibilitySensor from 'react-visibility-sensor';
 
 const fetchImageUrls = async () => {
@@ -31,7 +32,7 @@ const getImageDimensions = (
   src: string
 ): Promise<{ width: number; height: number }> => {
   return new Promise((resolve) => {
-    const img = new Image();
+    const img = new window.Image();
     img.src = src;
     img.onload = () => {
       resolve({
@@ -84,7 +85,7 @@ const PhotosComponent: React.FC = () => {
           onChange={(isVisible: boolean) => onVisibilityChange(index, isVisible)}
           partialVisibility
         >
-          <img
+          <Image
             src={image.src}
             alt="Photo"
             width={image.width / 8}

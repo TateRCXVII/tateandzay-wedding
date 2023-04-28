@@ -1,5 +1,4 @@
 // components/Gallery.tsx
-'use client';
 import React, { useEffect, useState, useCallback } from 'react';
 import { storage } from '../../../../firebase/index';
 import { ref, listAll, getDownloadURL } from 'firebase/storage';
@@ -8,7 +7,6 @@ import Gallery from 'react-photo-gallery';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import styles from './styles.module.scss';
-import Image from 'next/image';
 
 const fetchImageUrls = async () => {
   const storageRef = ref(storage, 'photos');
@@ -32,7 +30,8 @@ const getImageDimensions = (
   src: string
 ): Promise<{ width: number; height: number }> => {
   return new Promise((resolve) => {
-    const img = new window.Image();
+    //creat img without using window
+    const img = new Image();
     img.src = src;
     img.onload = () => {
       resolve({

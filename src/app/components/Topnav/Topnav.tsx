@@ -1,10 +1,9 @@
-'use client'
-import React, { useState } from 'react'
-import Button from '@mui/material/Button'
+import React, { useState } from 'react';
+import Button from '@mui/material/Button';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import styles from './styles.module.scss'
-import { useRouter } from 'next/router'
+import styles from './styles.module.scss';
+import Link from 'next/link';
 
 //create a top nav
 export default function Topnav() {
@@ -13,11 +12,6 @@ export default function Topnav() {
 
   const handleMobileMenuToggle = () => {
     setMobileNavOpen(!mobileNavOpen);
-  };
-
-  const handleMobileLinkClick = (url: string) => {
-    window.location.href = url;
-    setMobileNavOpen(false);
   };
 
   const handleCloseClick = () => {
@@ -46,11 +40,18 @@ export default function Topnav() {
         </button>
       </div>
       <div className={`${styles.links} ${styles['links--desktop']}`}>
-        {/* Desktop links */}
-        <Button className={styles['links--button']} onClick={() => { window.location.href = '/' }}>home</Button>
-        {/* <Button className={styles['links--button']} onClick={() => { window.location.href = '/rsvp' }}>rsvp</Button> */}
-        <Button className={styles['links--button']} onClick={() => { window.location.href = '/registry' }}>registry</Button>
-        <Button className={styles['links--button']} onClick={() => { window.location.href = '/gallery' }}>gallery</Button>
+        <div className={`${styles.links} ${styles['links--desktop']}`}>
+          {/* Desktop links */}
+          <Link href="/" passHref>
+            <Button className={styles['links--button']}>home</Button>
+          </Link>
+          <Link href="/registry" passHref>
+            <Button className={styles['links--button']}>registry</Button>
+          </Link>
+          <Link href="/gallery" passHref>
+            <Button className={styles['links--button']}>gallery</Button>
+          </Link>
+        </div>
       </div>
       {mobileNavOpen && (
         <div className={`${styles['links--mobile']} ${mobileNavOpen ? styles.open : isClosing ? styles.closing : ''}`}>
@@ -61,10 +62,15 @@ export default function Topnav() {
             <CloseIcon />
           </button>
           {/* Mobile links */}
-          <Button className={styles['links--button']} onClick={() => handleMobileLinkClick('/')}>home</Button>
-          {/* <Button className={styles['links--button']} onClick={() => handleMobileLinkClick('/rsvp')}>rsvp</Button> */}
-          <Button className={styles['links--button']} onClick={() => handleMobileLinkClick('/registry')}>registry</Button>
-          <Button className={styles['links--button']} onClick={() => handleMobileLinkClick('/gallery')}>gallery</Button>
+          <Link href="/" passHref>
+            <Button className={styles['links--button']} onClick={handleCloseClick}>home</Button>
+          </Link>
+          <Link href="/registry" passHref>
+            <Button className={styles['links--button']} onClick={handleCloseClick}>registry</Button>
+          </Link>
+          <Link href="/gallery" passHref>
+            <Button className={styles['links--button']} onClick={handleCloseClick}>gallery</Button>
+          </Link>
         </div>
       )}
     </div>

@@ -7,6 +7,22 @@
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
+        "source": "/_next/**",
+        "destination": "/_next/:path*"
+      },
+      {
+        "source": "/static/**",
+        "destination": "/static/:path*"
+      },
+      {
+        "source": "/favicon.ico",
+        "destination": "/favicon.ico"
+      },
+      {
+        "source": "/rsvp",
+        "destination": "/rsvp.html"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }

@@ -93,7 +93,7 @@ const CarouselComponent: React.FC = () => {
                   >
                     {imageUrls.map((image, index) => (
                       <div key={index}>
-                        <Image className={styles.carouselImage} src={image.src} alt={image.title} width={image.width * 3} height={image.height * 3} />
+                        <Image className={styles.carouselImage} src={image.src} alt={image.title} width={image.width * 3} height={image.height * 3} loading="lazy" />
                       </div>
                     ))}
                   </Carousel>

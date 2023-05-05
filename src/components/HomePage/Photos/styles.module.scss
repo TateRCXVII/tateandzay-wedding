@@ -1,5 +1,11 @@
 .photos {
   @apply flex justify-center px-4 sm:px-12 mt-12 sm:mt-48 space-x-20;
+  // for phones, make it so you can't scroll
+  @media (max-width: 640px) {
+    overflow-x: hidden;
+    align-items: start;
+    margin-left: -30rem;
+  }
   flex-wrap: nowrap;
   overflow-x: auto;
 }

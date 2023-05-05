@@ -32,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <div>
-      <body>{children}</body>
+      {children}
     </div>
   )
 }

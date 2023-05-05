@@ -176,7 +176,7 @@ export default function RSVP() {
             <h2 className="text-black text-2xl font-serif pb-3">Buy the couple a gift:</h2>
             <div className="flex my-3">
               <a
-                href="https://www.zola.com/"
+                href="https://www.zola.com/registry/tateandzaylie"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-black text-white text-lg py-3 px-6 rounded mr-4"
@@ -184,7 +184,7 @@ export default function RSVP() {
                 Zola
               </a>
               <a
-                href="https://www.myregistry.com/"
+                href="https://www.myregistry.com/wedding-registry/tate-reynolds-and-zaylie-collins-salt-lake-city-ut/3639173"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-black text-white text-lg py-3 px-6 rounded"

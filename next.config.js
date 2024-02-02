@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    appDir: true,
+    // appDir: true,
   },
   images: {
+    unoptimized: true,
     domains: [
       "images.unsplash.com",
       "wedding-rsvp-zate.appspot.com",

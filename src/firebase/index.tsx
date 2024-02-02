@@ -10,14 +10,14 @@ import { getStorage } from "firebase/storage";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   //.env
-  apiKey: "AIzaSyCxz9nU4eWZ1VK0L6-I7D0AQ9CMu-0PDJ8",
-  authDomain: "wedding-rsvp-zate.firebaseapp.com",
-  projectId: "wedding-rsvp-zate",
-  storageBucket: "wedding-rsvp-zate.appspot.com",
-  databaseURL: "https://wedding-rsvp-zate-default-rtdb.firebaseio.com",
-  messagingSenderId: "554105169785",
-  appId: "1:554105169785:web:4a1b4f51f60cd317a6b1a8",
-  measurementId: "G-14VL06ZLNN"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DB_URL,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MSG_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
